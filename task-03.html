@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task 3</title>
     <link rel="stylesheet" href="css/common.css" />
+  <style>
+    
+.gallery {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.gallery__set {
+  width: 350px;
+  height: 250px;
+ 
+}
+
+.gallery__image:hover,
+.gallery__image:focus-within {
+  transform:scale(1.10);
+  transition: 500 ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+}
+  </style>
   </head>
   <body>
    
