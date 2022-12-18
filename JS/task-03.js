@@ -27,17 +27,22 @@ const images = [
 // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS
 // класи.
-const listEl = document.querySelector(".gallery")
+// const listEl = document.querySelector(".gallery")
 
-for (let i = 0; i < images.length; i += 1) {
-  const imgArrEl = images[i];
-  const setEl = document.createElement("li");
-  setEl.classList.add("gallery__set")
-  const imgEl = document.createElement("img");
-  imgEl.classList.add("gallery__image");
-  imgEl.src = imgArrEl.url;
-  imgEl.alt = imgArrEl.alt;
-  setEl.appendChild(imgEl)
-  console.log(setEl)
-  listEl.append(setEl)
-}
+// for (let i = 0; i < images.length; i += 1) {
+//   const imgArrEl = images[i];
+//   const setEl = document.createElement("li");
+//   setEl.classList.add("gallery__set")
+//   const imgEl = document.createElement("img");
+//   imgEl.classList.add("gallery__image");
+//   imgEl.src = imgArrEl.url;
+//   imgEl.alt = imgArrEl.alt;
+//   setEl.appendChild(imgEl)
+//   console.log(setEl)
+//   listEl.append(setEl)
+// }
+
+const listEl = document.querySelector(".gallery")
+const setsEl = images.map((setEl) => `<li class="gallery__set"><img class="gallery__image" src="${setEl.url}" alt="${setEl.alt}"></li>`).join("");
+listEl.insertAdjacentHTML("afterbegin", setsEl);
+

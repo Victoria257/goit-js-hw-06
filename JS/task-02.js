@@ -15,13 +15,15 @@ const ingredients = [
 // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
 
 
-const ingredientsEl = document.querySelector('#ingredients');
+let ingredientsEl = document.querySelector('#ingredients');
+let setsEl = [];
 
 for (let i = 0; i < ingredients.length; i += 1) {
   let setEl = document.createElement("li");
   setEl.textContent = ingredients[i];
   setEl.classList.add("item");
-  console.log(setEl);
-  ingredientsEl.append(setEl)
+  setsEl.push(setEl)
 }
-
+  console.log(setsEl);
+ingredientsEl.append(...setsEl)
+console.log(ingredientsEl);

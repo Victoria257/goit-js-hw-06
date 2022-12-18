@@ -34,11 +34,11 @@ const handleSubmit = (event) => {
     else {
         formDataObject.email = form.email.value;
         formDataObject.password = form.password.value;
-    
         event.currentTarget.reset();
+        console.log(formDataObject)
     }
   
 }
 
 form.addEventListener("submit", handleSubmit);
-console.log(formDataObject)
+

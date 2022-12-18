@@ -1,3 +1,46 @@
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+
+// const buttonCreate = document.querySelector("[data-create]");
+// const buttonDestroy = document.querySelector("[data-destroy]");
+// const inputEl = document.querySelector("input");
+// const boxesEl = document.querySelector("#boxes");
+
+// function repeat(n, action) {
+// for (let i = 0; i < n; i += 1) {
+//   action(i);
+//   }
+// }
+
+// function functionRepeat(amount) {
+//   const div1 = document.createElement("div");
+//   div1.classList.add("box");
+//   div1.style.width = `${30+10*it.next().value}px`;
+//   div1.style.height = div1.style.width;
+//   div1.style.backgroundColor = getRandomHexColor();
+//   boxesEl.append(div1);
+
+// }
+// const testRepeat = () => repeat(inputEl.value, functionRepeat)
+
+// buttonCreate.addEventListener("click", testRepeat);
+
+// function destroyBoxes() {
+//  boxesEl.remove()
+// }
+
+// buttonDestroy.addEventListener("click",destroyBoxes)
+
+
+// let index;
+// function* idMaker(){
+//   index = 0;
+//   while(true)
+//   yield index ++;
+// }
+// let it = idMaker();
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
@@ -7,39 +50,28 @@ const buttonDestroy = document.querySelector("[data-destroy]");
 const inputEl = document.querySelector("input");
 const boxesEl = document.querySelector("#boxes");
 
-function repeat(n, action) {
-for (let i = 0; i < n; i += 1) {
-  action(i);
+let divBoxes = [];
+
+function createBoxes() {
+  
+  for (let i = 0; i < inputEl.value; i += 1) { 
+    const div1 = document.createElement("div");
+    div1.classList.add("box");
+    div1.style.width = `${30+10*i}px`;
+    div1.style.height = div1.style.width;
+    div1.style.backgroundColor = getRandomHexColor();
+    divBoxes.push(div1);
   }
+  boxesEl.append(...divBoxes)
 }
 
-function functionRepeat(amount) {
-  const div1 = document.createElement("div");
-  div1.classList.add("box");
-  div1.style.width = `${30+10*it.next().value}px`;
-  div1.style.height = div1.style.width;
-  div1.style.backgroundColor = getRandomHexColor();
-  boxesEl.append(div1);
-
-}
-const testRepeat = () => repeat(inputEl.value, functionRepeat)
-
-buttonCreate.addEventListener("click", testRepeat);
+buttonCreate.addEventListener("click", createBoxes);
 
 function destroyBoxes() {
  boxesEl.remove()
 }
 
 buttonDestroy.addEventListener("click",destroyBoxes)
-
-
-let index;
-function* idMaker(){
-  index = 0;
-  while(true)
-  yield index ++;
-}
-let it = idMaker();
 
 // Напиши скрипт створення і очищення колекції елементів.
 //  Користувач вводить кількість елементів в input і натискає кнопку

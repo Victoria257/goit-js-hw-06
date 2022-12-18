@@ -6,8 +6,11 @@
 // <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
 const inputEl = document.querySelector('#name-input');
-const outputEl = document.querySelector('#name-output');
+const spanEl = document.querySelector('#name-output');
 
-inputEl.addEventListener("input", (event) => {
-  outputEl.textContent = event.currentTarget.value;
-});
+
+  inputEl.addEventListener("input", (event) => {
+    if (inputEl.value !== "") spanEl.textContent = event.currentTarget.value;
+    else spanEl.textContent = "Anonymous";
+     
+  });
